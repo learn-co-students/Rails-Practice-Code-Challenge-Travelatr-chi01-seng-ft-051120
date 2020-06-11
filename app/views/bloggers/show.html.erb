@@ -1,0 +1,11 @@
+<h1> <%= @blogger.name %> </h1>
+<h2> Total number of likes: <%= @likes_count %></h2>
+<% if @featured_post != nil %>
+<h3> Featured Post: <%= link_to @featured_post.title, post_path(@featured_post) %> </h3>
+<% end %>
+<p>Most Popular Destinations I've Written About:</p>
+    <ol>
+    <% @most_popular_destinations.each do |destination| %>
+        <li><%= link_to destination.name, destination_path(destination) %></li>
+    <% end %>
+    </ol>
